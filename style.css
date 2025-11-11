@@ -1,0 +1,190 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Background */
+body {
+  background: radial-gradient(circle at top, #00081f, #021034, #03122a);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+/* Wrapper */
+.wrapper {
+  width: 90%;
+  max-width: 440px;
+  text-align: center;
+}
+
+/* Card */
+.card {
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 30px;
+  padding: 50px 30px;
+  backdrop-filter: blur(25px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 0 60px rgba(0, 120, 255, 0.25);
+  position: relative;
+  animation: fadeIn 1.2s ease;
+}
+
+/* Crown effect */
+.crown {
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70px;
+  height: 70px;
+  background: url("crown.png") center/contain no-repeat;
+  animation: float 3s ease-in-out infinite;
+  filter: drop-shadow(0 0 10px #00c8ff);
+}
+
+/* Profile ring */
+.profile-ring {
+  width: 140px;
+  height: 140px;
+  margin: 40px auto 20px;
+  border-radius: 50%;
+  background: conic-gradient(from 0deg, #00c8ff, #0077ff, #00c8ff);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: rotateRing 5s linear infinite;
+  box-shadow: 0 0 40px rgba(0, 140, 255, 0.6);
+}
+
+.profile-pic {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid #0a1835;
+}
+
+.profile-pic img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Title */
+h1 {
+  background: linear-gradient(90deg, #2da9ff, #b9ffff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 800;
+  letter-spacing: 1px;
+  margin-top: 10px;
+  margin-bottom: 8px;
+  font-size: 1.5rem;
+}
+
+.subs {
+  color: #a7d5ff;
+  font-size: 0.9rem;
+  margin-bottom: 20px;
+}
+
+/* About */
+.about {
+  font-size: 0.95rem;
+  color: #e5f3ff;
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+.about strong {
+  color: #55cfff;
+}
+
+/* Timer */
+.timer-box p {
+  font-size: 0.9rem;
+  color: #b4b4b4;
+}
+
+#timer {
+  font-size: 1.9rem;
+  font-weight: 800;
+  color: #3ecaff;
+  margin-top: 5px;
+  text-shadow: 0 0 15px #00bfff;
+}
+
+/* Join Button */
+#joinBtn {
+  background: linear-gradient(90deg, #00bfff, #0050ff);
+  border: none;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.8rem;
+  padding: 12px 38px;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+  animation: fadeBtn 2s infinite alternate;
+  box-shadow: 0 0 25px rgba(0, 130, 255, 0.7);
+}
+
+#joinBtn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -80px;
+  width: 50px;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.4);
+  transform: skewX(-20deg);
+  animation: shine 3s infinite;
+}
+
+#joinBtn:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 45px rgba(0, 180, 255, 0.9);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* @keyframes rotateRing {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+} */
+
+@keyframes fadeBtn {
+  from { opacity: 0.9; }
+  to { opacity: 1; }
+}
+
+@keyframes shine {
+  0% { left: -80px; }
+  100% { left: 120%; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translate(-50%, 0); }
+  50% { transform: translate(-50%, -8px); }
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  h1 { font-size: 1.3rem; }
+  .about { font-size: 0.88rem; }
+  #joinBtn { padding: 10px 26px; font-size: 0.95rem; }
+}
